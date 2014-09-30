@@ -13,6 +13,10 @@ public class Utilisateur {
         this.nom = nom;
     }
 
+    public Utilisateur() {
+        super();
+    }
+
     public String getEmail() {
         return email;
     }
