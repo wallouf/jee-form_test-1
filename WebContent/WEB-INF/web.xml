@@ -19,8 +19,16 @@
     <servlet-name>Inscription</servlet-name>
     <servlet-class>com.wallouf.jee.form.servlets.Inscription</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>Connexion</servlet-name>
+    <servlet-class>com.wallouf.jee.form.servlets.Connexion</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Inscription</servlet-name>
     <url-pattern>/inscription</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Connexion</servlet-name>
+    <url-pattern>/connexion</url-pattern>
   </servlet-mapping>
 </web-app>
