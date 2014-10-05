@@ -46,6 +46,15 @@ public class RestrictionFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         HttpSession session = req.getSession();
 
+        /**
+         * Non filtrage des ressources statiques
+         */
+        String chemin = req.getRequestURI().substring( req.getContextPath().length() );
+        if ( chemin.startsWith( "/inc" ) ) {
+            chain.doFilter( request, response );
+            return;
+        }
+
         if ( session.getAttribute( ATT_SESSION_USER ) == null ) {
             req.getRequestDispatcher( ACCES_CONNEXION ).forward( req, res );
         } else {
