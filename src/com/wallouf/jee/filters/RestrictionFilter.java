@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 @WebFilter( "/RestrictionFilter" )
 public class RestrictionFilter implements Filter {
 
-    public static final String ACCES_PUBLIC     = "/accesPublic.jsp";
+    public static final String ACCES_CONNEXION  = "/connexion";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
 
     /**
@@ -47,7 +47,7 @@ public class RestrictionFilter implements Filter {
         HttpSession session = req.getSession();
 
         if ( session.getAttribute( ATT_SESSION_USER ) == null ) {
-            res.sendRedirect( req.getContextPath() + ACCES_PUBLIC );
+            req.getRequestDispatcher( ACCES_CONNEXION ).forward( req, res );
         } else {
             // pass the request along the filter chain
             chain.doFilter( request, response );

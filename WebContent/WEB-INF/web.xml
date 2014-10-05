@@ -47,6 +47,6 @@
   </filter>
   <filter-mapping>
     <filter-name>RestrictionFilter</filter-name>
-    <url-pattern>/restreint/*</url-pattern>
+    <url-pattern>/*</url-pattern>
   </filter-mapping>
 </web-app>
