@@ -39,4 +39,14 @@
     <servlet-name>Deconnexion</servlet-name>
     <url-pattern>/deconnexion</url-pattern>
   </servlet-mapping>
+  
+  
+  <filter>
+    <filter-name>RestrictionFilter</filter-name>
+    <filter-class>com.wallouf.jee.filters.RestrictionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>RestrictionFilter</filter-name>
+    <url-pattern>/restreint/*</url-pattern>
+  </filter-mapping>
 </web-app>
