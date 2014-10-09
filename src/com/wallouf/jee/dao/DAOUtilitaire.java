@@ -35,7 +35,7 @@ public class DAOUtilitaire {
     }
 
     /* Fermeture silencieuse du statement */
-    public static void fermetureSilencieuse( Statement statement ) {
+    public static void fermetureSilencieuse( PreparedStatement statement ) {
         if ( statement != null ) {
             try {
                 statement.close();
@@ -57,13 +57,13 @@ public class DAOUtilitaire {
     }
 
     /* Fermetures silencieuses du statement et de la connexion */
-    public static void fermeturesSilencieuses( Statement statement, Connection connexion ) {
+    public static void fermeturesSilencieuses( PreparedStatement statement, Connection connexion ) {
         fermetureSilencieuse( statement );
         fermetureSilencieuse( connexion );
     }
 
     /* Fermetures silencieuses du resultset, du statement et de la connexion */
-    public static void fermeturesSilencieuses( ResultSet resultSet, Statement statement, Connection connexion ) {
+    public static void fermeturesSilencieuses( ResultSet resultSet, PreparedStatement statement, Connection connexion ) {
         fermetureSilencieuse( resultSet );
         fermetureSilencieuse( statement );
         fermetureSilencieuse( connexion );
